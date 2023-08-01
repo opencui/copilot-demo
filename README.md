@@ -19,7 +19,7 @@ const client = OpencuiCopilot.create({
   url: 'https://api-64b897ae0f50353c647ca60b.api-us.naturali.io/v1/en',  // Make sure you have built and deployed your own Copilot bot on the open platform, the url is the address where the bot is deployed online or privately.
   user: {
     id: 'my_user_id',
-    user: 'Me'
+    name: 'Me'
   } // The id and name of the user who is talking to copilot locally，user.id will be used as the session id
 })
 
