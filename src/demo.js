@@ -6,12 +6,14 @@ import '@chatui/core/dist/index.css';
 
 const botAvatar = require('./copilot-bot.png')
 
+const me = {
+  id: 'my_user_id',
+  name: 'me'
+};
+
 const client = OpencuiCopilot.create({
   url: 'https://api-64b897ae0f50353c647ca60b.api-us.naturali.io/v1/en',
-  user: {
-    id: 'my_user_id',
-    user: 'Me'
-  }
+  user: me
 })
 
 function getAvatar(user) {
@@ -39,11 +41,6 @@ function converMessage(copilotMsg) {
       return { type: 'text' };
   }
 }
-
-const me = {
-  id: 'my_user_id',
-  name: 'me'
-};
 
 export default function Demo(props) {
 
