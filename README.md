@@ -51,4 +51,4 @@ client.sendMessage({
 You can develop the dialog container with the layout and style you need. This demo renders the dialog interface with components of ChatUI for reference only.
 
 ### run demo
-`npm install && npm start`
+`npm install && npm run start`
