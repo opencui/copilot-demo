@@ -1,6 +1,6 @@
 import React from 'react';
 import Chat, { Bubble, Button, useMessages } from '@chatui/core';
-import { CopilotMessageType, OpencuiCopilot, CopilotMessageCardActionType } from 'opencui-copilot';
+import { MessageType, OpencuiClient, ActionType } from 'opencui';
 import '@chatui/core/es/styles/index.less';
 import '@chatui/core/dist/index.css';
 
@@ -11,7 +11,7 @@ const me = {
   name: 'me'
 };
 
-const client = OpencuiCopilot.create({
+const client = OpencuiClient.create({
   url: 'https://api-64b897ae0f50353c647ca60b.api-us.naturali.io/v1/en',
   user: me
 })
@@ -23,14 +23,14 @@ function getAvatar(user) {
 function converMessage(copilotMsg) {
 
   switch (copilotMsg.messageType) {
-    case CopilotMessageType.Text:
+    case MessageType.Text:
       return {
         type: 'text',
         content: { text: copilotMsg.text },
         position: copilotMsg.user.id === 'my_user_id' ? 'right' : 'left',
         user: { avatar: getAvatar(copilotMsg.user) }
       };
-    case CopilotMessageType.Card:
+    case MessageType.Card:
       return {
         type: 'card',
         content: copilotMsg,
@@ -74,7 +74,7 @@ export default function Demo(props) {
       setTyping(true);
 
       client.sendMessage({
-        messageType: CopilotMessageType.text,
+        messageType: MessageType.text,
         text: val,
         user: me
       }).then(resps => {
@@ -129,7 +129,7 @@ export default function Demo(props) {
             {content.actionList && content.actionList.length ? <div style={{ display: 'flex', flexWrap: 'wrap', marginLeft: -4, marginRight: -4 }}>
               {
                 content.actionList.map((action, index) => {
-                  return <Button key={`${index}`} onClick={() => {
+                  return <Button key={index} onClick={() => {
                     executeAction(action);
                   }} color="primary" style={{ margin: 4 }}>{action.text}</Button>;
                 })
@@ -147,10 +147,10 @@ export default function Demo(props) {
 
     switch (action.actionType) {
 
-      case CopilotMessageCardActionType.reply:
+      case ActionType.reply:
         handleQuickReplyClick(action.text)
         break;
-      case CopilotMessageCardActionType.click:
+      case ActionType.click:
         if (action.url) {
           window.location.href = action.url;
         } else if (props.onCustomAction) {
