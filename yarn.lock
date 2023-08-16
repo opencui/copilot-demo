@@ -6723,10 +6723,10 @@ open@^8.0.9, open@^8.4.0:
     is-docker "^2.1.1"
     is-wsl "^2.2.0"
 
-opencui@^0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/opencui/-/opencui-0.0.10.tgz#bb433a0b7ed63dc065624a5760bd919c4a41f657"
-  integrity sha512-YOhossH9FIyeZ5VmgZiY6n/FtJ+f4BzLHvRXPzmB9nQ/Z100vogyUMYYc5FEkQXY98qekKywZq8OxufLv7XO5A==
+opencui@^0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/opencui/-/opencui-0.0.15.tgz#9a6c2f124ff6e4a2ff30d766ef26c351715ff6fc"
+  integrity sha512-rHxSAwTFv4ZibXDOsu05I3V83+cJYMgp90fGuNyEp2RTZrPH3j1PfhzK2iw7smlj7vcMlmHqniNED0A0J4XYPw==
 
 optionator@^0.9.3:
   version "0.9.3"

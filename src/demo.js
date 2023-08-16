@@ -59,6 +59,30 @@ export default function Demo(props) {
 
   }, [appendMsg]);
 
+  React.useEffect(() => {
+
+    // register context getter. for example, just pass current url as app state.
+    client.registerContextGetter(function () {
+
+      return {
+        url: window.location.href
+      };
+    });
+
+    //  register action handler. 
+    client.registerActionHandler(function (action) {
+
+      if (action.url) {
+        window.location.href = action.url;
+      } else if (props.onCustomAction) {
+        props.onCustomAction(action);
+      } else {
+        alert('This action is not supported yet');
+      }
+    });
+
+  }, []);
+
   function handleSend(type, val) {
     if (type === 'text' && val.trim()) {
 
@@ -130,7 +154,18 @@ export default function Demo(props) {
               {
                 content.actionList.map((action, index) => {
                   return <Button key={index} onClick={() => {
-                    executeAction(action);
+                    switch (action.actionType) {
+
+                      case ActionType.reply:
+                        handleQuickReplyClick(action.text)
+                        break;
+                      case ActionType.click:
+                        client.executeAction(action);
+                        break;
+                      default:
+                        alert('This action is not supported yet');
+                        break;
+                    }
                   }} color="primary" style={{ margin: 4 }}>{action.text}</Button>;
                 })
               }
@@ -140,29 +175,6 @@ export default function Demo(props) {
         );
       default:
         return null;
-    }
-  }
-
-  function executeAction(action) {
-
-    switch (action.actionType) {
-
-      case ActionType.reply:
-        handleQuickReplyClick(action.text)
-        break;
-      case ActionType.click:
-        if (action.url) {
-          window.location.href = action.url;
-        } else if (props.onCustomAction) {
-          props.onCustomAction(action);
-
-        } else {
-          alert('This action is not supported yet');
-        }
-        break;
-      default:
-        alert('This action is not supported yet');
-        break;
     }
   }
 
