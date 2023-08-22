@@ -42,7 +42,7 @@ function converMessage(copilotMsg) {
   }
 }
 
-export default function Demo(props) {
+export default function ChatComponent(props) {
 
   // 消息列表
   const { messages, appendMsg, setTyping } = useMessages([]);
