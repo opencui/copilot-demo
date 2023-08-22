@@ -1,52 +1,38 @@
-## Install
+## Install 
+1. install by npm :`npm install opencui --save`
+2. Install by yarn: `yarn add opencui`
+## Use  chat component 
+Import chat component into your react app and embed it in your UI. In this example code, the url of the current page is used as an example of the app status, and the alert displays the action information as an example of processing the action. The integrator should pass in status and process actions based on the specific business requirements of the app. 
 
-```bash
-npm install opencui-copilot --save
+```JavaScript
+import './App.css';
+import { ChatComponent } from 'opencui';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <div style={{ height: '80vh', width: 500 }}>
+          <ChatComponent
+            botURL="https://api-64b897ae0f50353c647ca60b.api-us.naturali.io/v1/en"
+            contextGetter={() => {  
+              return {
+                url: window.location.href
+              };
+            }}
+            actionHandler={action => {
+              alert(JSON.stringify(action, null, 4));
+            }}
+          />
+        </div>
+      </header>
+    </div>
+  );
+}
+
+export default App;
 ```
 
-```bash
-yarn add opencui-copilot
-```
-
-## Usage
-
-```jsx
-// import sdk
-import { CopilotMessageType, OpencuiCopilot, CopilotMessageCardActionType } from 'opencui-copilot';
-
-// create client
-const client = OpencuiCopilot.create({
-  url: 'https://api-64b897ae0f50353c647ca60b.api-us.naturali.io/v1/en',  // Make sure you have built and deployed your own Copilot bot on the open platform, the url is the address where the bot is deployed online or privately.
-  user: {
-    id: 'my_user_id',
-    name: 'Me'
-  } // The id and name of the user who is talking to copilot locally，user.id will be used as the session id
-})
-
-// init session, connect with bot, connect successfully will receive bot greeting messages
-client.connect().then(initMsgs => {
-      // received greeting messages
-      console.log(initMsgs);
-    }).catch(err => {
-      console.log(err);
-    });
-
-// send message
-client.sendMessage({
-        messageType: CopilotMessageType.text,
-        text: 'message to bot',
-        user: {
-          id: 'my_user_id',
-          user: 'Me'
-        }
-      }).then(resps => {
-        // received messages from bot
-        console.log(resps);
-      }).catch(err => {
-        console.log(err);
-      });
-```
-`
 ## Try demo
 You can develop the dialog container with the layout and style you need. This demo renders the dialog interface with components of ChatUI for reference only.
 

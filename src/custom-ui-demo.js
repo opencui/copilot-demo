@@ -4,8 +4,6 @@ import { MessageType, OpencuiClient, ActionType } from 'opencui';
 import '@chatui/core/es/styles/index.less';
 import '@chatui/core/dist/index.css';
 
-const botAvatar = require('./copilot-bot.png')
-
 const me = {
   id: 'my_user_id',
   name: 'me'
@@ -15,6 +13,26 @@ const client = OpencuiClient.create({
   url: 'https://api-64b897ae0f50353c647ca60b.api-us.naturali.io/v1/en',
   user: me
 })
+
+// register context getter. for example, just pass current url as app state.
+client.registerContextGetter(function () {
+
+  return {
+    url: window.location.href
+  };
+});
+
+//  register action handler. 
+client.registerActionHandler(function (action) {
+
+  if (action.url) {
+    window.location.href = action.url;
+  } else {
+    alert(JSON.stringify(action, undefined, 4));
+  }
+});
+
+const botAvatar = require('./copilot-bot.png')
 
 function getAvatar(user) {
   return user.id === 'my_user_id' ? '//gw.alicdn.com/tfs/TB1DYHLwMHqK1RjSZFEXXcGMXXa-56-62.svg' : botAvatar;
@@ -42,13 +60,14 @@ function converMessage(copilotMsg) {
   }
 }
 
-export default function ChatComponent(props) {
+export default function CustomChatComponent(props) {
 
   // 消息列表
   const { messages, appendMsg, setTyping } = useMessages([]);
 
   // init session
   React.useEffect(() => {
+
     client.connect().then(initMsgs => {
       for (const msg of initMsgs) {
         appendMsg(converMessage(msg))
@@ -58,30 +77,6 @@ export default function ChatComponent(props) {
     });
 
   }, [appendMsg]);
-
-  React.useEffect(() => {
-
-    // register context getter. for example, just pass current url as app state.
-    client.registerContextGetter(function () {
-
-      return {
-        url: window.location.href
-      };
-    });
-
-    //  register action handler. 
-    client.registerActionHandler(function (action) {
-
-      if (action.url) {
-        window.location.href = action.url;
-      } else if (props.onCustomAction) {
-        props.onCustomAction(action);
-      } else {
-        alert('This action is not supported yet');
-      }
-    });
-
-  }, []);
 
   function handleSend(type, val) {
     if (type === 'text' && val.trim()) {
@@ -186,7 +181,9 @@ export default function ChatComponent(props) {
       renderMessageContent={renderMessageContent}
       onSend={handleSend}
       placeholder='Please enter...'
-      {...props}
+      {
+      ...props
+      }
     />
   );
 }
