@@ -119,7 +119,7 @@ export default function ChatComponent(props) {
     const { type, content } = msg;
 
     const media = content.richMedia;
-    // 根据消息类型来渲染
+
     switch (type) {
       case 'text':
         return <Bubble content={content.text} style={{ textAlign: 'left' }} />;
