@@ -6723,10 +6723,10 @@ open@^8.0.9, open@^8.4.0:
     is-docker "^2.1.1"
     is-wsl "^2.2.0"
 
-opencui@^0.0.22:
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/opencui/-/opencui-0.0.22.tgz#a52f0fe1142ec672759c29b8b497c3cc35f73c2d"
-  integrity sha512-o+Qa6YzSgHtZ8PUYh9UsWT8EGrEQ05iBEn4yHL+y/dBPdibTlmjg4QdiuCcewrwlEUoPEztWczi+I2+a5oxxgw==
+opencui@^0.0.23-alpha.5:
+  version "0.0.23-alpha.5"
+  resolved "https://registry.yarnpkg.com/opencui/-/opencui-0.0.23-alpha.5.tgz#c112b8ac818139d3181c615c28858899868d2248"
+  integrity sha512-QwoKPixZYqzVlglKA1ZV8vAVlr74gobRFUmvc5T/mXxYFfgjEYVw/+tjmZ7iLvNAnIZ6tDCtgTUDbgK4UxYjNA==
   dependencies:
     "@chatui/core" "^2.4.2"
     react "^18.2.0"

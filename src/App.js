@@ -1,5 +1,5 @@
 import './App.css';
-import { ChatComponent } from 'opencui/';
+import { ChatComponent } from 'opencui';
 
 function App() {
   return (
@@ -9,7 +9,9 @@ function App() {
           <ChatComponent
             botURL="https://api-64b897ae0f50353c647ca60b.api-us.naturali.io/v1/en"
             contextGetter={() => {
-              return window.location.href;
+              return {
+                url: window.location.href
+              };
             }}
             actionHandler={action => {
               alert(JSON.stringify(action, null, 4));
