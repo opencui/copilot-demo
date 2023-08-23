@@ -1,8 +1,17 @@
+# Web-copilot 
+Web-Copilot is a React UI component designed for seamless integration into any web application, enhancing the copilot experience. To integrate this component into your web application, simply improt the componetn and configure the following three properties:
+
+1. Bot URL: Enter the URL where the Chatbot is deployed.
+2. Context Getter Function: When a user's message is sent to the bot, it will invoke this function to retrieve the current frontend status before making the request. The obtained status will be sent to the bot as request parameters, enabling the bot to provide more accurate replies and actions based on the current frontend status.
+3. Action Handler Function: The actions returned by the bot are displayed in the chat component as buttons. When a button is clicked, it triggers the execution of the action handler. The action's information, including its type and parameters, is passed to the action handler as a parameter. The integrator can then process this information for specific business actions.
+
+
 ## Install 
 1. install by npm :`npm install opencui --save`
 2. Install by yarn: `yarn add opencui`
-## Use  chat component 
-Import chat component into your react app and embed it in your UI. In this example code, the url of the current page is used as an example of the app status, and the alert displays the action information as an example of processing the action. The integrator should pass in status and process actions based on the specific business requirements of the app. 
+   
+## Use chat component 
+In this example code, the context getter function simply returns the URL of the current page to represent the app state, and the action handler renders an alert that shows information about the action. In reality, you need to provide useful implementation per your copilot design.
 
 ```JavaScript
 import './App.css';
@@ -32,9 +41,3 @@ function App() {
 
 export default App;
 ```
-
-## Try demo
-You can develop the dialog container with the layout and style you need. This demo renders the dialog interface with components of ChatUI for reference only.
-
-### run demo
-`npm install && npm run start`
