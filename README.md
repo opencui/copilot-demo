@@ -1,5 +1,5 @@
-# Web-copilot 
-Web-Copilot is a React UI component based on [ChatUI](https://github.com/alibaba/ChatUI) designed to add the copilot experience to any web app. To integrate this component into your web application, simply improt the componetn and configure the following three properties:
+# Copilot-React
+Copilot-react is a UI component based on [ChatUI](https://github.com/alibaba/ChatUI) that adds the copilot experience to any web app. To integrate this component into your web application, simply import the componetn and configure the following three properties:
 
 1. Bot URL: Enter the URL where the Chatbot is deployed.
 2. Context Getter Function: When a user's message is sent to the bot, it will invoke this function to retrieve the current frontend status before making the request. The obtained status will be sent to the bot as request parameters, enabling the bot to provide more accurate replies and actions based on the current frontend status.
