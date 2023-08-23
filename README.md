@@ -7,15 +7,15 @@ Copilot-react is a UI component based on [ChatUI](https://github.com/alibaba/Cha
 
 
 ## Install 
-1. install by npm :`npm install opencui --save`
-2. Install by yarn: `yarn add opencui`
+1. install by npm :`npm install @opencui/copilot-react --save`
+2. Install by yarn: `yarn add @opencui/copilot-react`
    
 ## Use chat component 
 In this example code, the context getter function simply returns the URL of the current page to represent the app state, and the action handler renders an alert that shows information about the action. In reality, you need to provide useful implementation per your copilot design.
 
 ```JavaScript
 import './App.css';
-import { ChatComponent } from 'opencui';
+import { ChatComponent } from '@opencui/copilot-react';
 
 function App() {
   return (

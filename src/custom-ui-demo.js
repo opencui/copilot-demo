@@ -1,6 +1,6 @@
 import React from 'react';
 import Chat, { Bubble, Button, useMessages } from '@chatui/core';
-import { MessageType, OpencuiClient, ActionType } from 'opencui';
+import { MessageType, OpencuiClient, ActionType } from '@opencui/copilot-react';
 import '@chatui/core/es/styles/index.less';
 import '@chatui/core/dist/index.css';
 

@@ -1673,6 +1673,14 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@opencui/copilot-react@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@opencui/copilot-react/-/copilot-react-0.0.1.tgz#fed97f88a0c044111b30bacfbcd8a56e024c9800"
+  integrity sha512-5FKn7tZhgseQpvIakj/iWxRM8m5ID1oLJbGZJSRjiLYvjisO9wZwz3/A+nDND5uE2dfHaKHqEvRyjaHpsMrQuA==
+  dependencies:
+    "@chatui/core" "^2.4.2"
+    react "^18.2.0"
+
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.3":
   version "0.5.10"
   resolved "https://registry.npmjs.org/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.10.tgz"
@@ -6722,14 +6730,6 @@ open@^8.0.9, open@^8.4.0:
     define-lazy-prop "^2.0.0"
     is-docker "^2.1.1"
     is-wsl "^2.2.0"
-
-opencui@^0.0.23-alpha.5:
-  version "0.0.23-alpha.5"
-  resolved "https://registry.yarnpkg.com/opencui/-/opencui-0.0.23-alpha.5.tgz#c112b8ac818139d3181c615c28858899868d2248"
-  integrity sha512-QwoKPixZYqzVlglKA1ZV8vAVlr74gobRFUmvc5T/mXxYFfgjEYVw/+tjmZ7iLvNAnIZ6tDCtgTUDbgK4UxYjNA==
-  dependencies:
-    "@chatui/core" "^2.4.2"
-    react "^18.2.0"
 
 optionator@^0.9.3:
   version "0.9.3"
