@@ -1,5 +1,5 @@
 import './App.css';
-import { ChatComponent } from 'opencui';
+import { ChatComponent } from '@opencui/copilot-react';
 // import CustomChatComponent from './custom-ui-demo';
 
 function App() {
