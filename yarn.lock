@@ -1673,13 +1673,17 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@opencui/copilot-react@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@opencui/copilot-react/-/copilot-react-0.0.1.tgz#fed97f88a0c044111b30bacfbcd8a56e024c9800"
-  integrity sha512-5FKn7tZhgseQpvIakj/iWxRM8m5ID1oLJbGZJSRjiLYvjisO9wZwz3/A+nDND5uE2dfHaKHqEvRyjaHpsMrQuA==
+"@opencui/copilot-react@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@opencui/copilot-react/-/copilot-react-0.0.25.tgz#dc9e46ef413b08c68fa10cc438734f6965c6eb5e"
+  integrity sha512-uBp+XjzRAmOaMlND5tKbk6i2F5WoQGL+s9SxTdKSb9zyP0jWX9C8WtZRknuCayd77pqtEj8HU5dQYHXO9TWOxA==
   dependencies:
     "@chatui/core" "^2.4.2"
+    "@types/js-sha1" "^0.6.0"
+    "@types/uuid" "^9.0.2"
+    js-sha1 "^0.6.0"
     react "^18.2.0"
+    uuid "^9.0.0"
 
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.3":
   version "0.5.10"
@@ -2095,6 +2099,11 @@
     expect "^29.0.0"
     pretty-format "^29.0.0"
 
+"@types/js-sha1@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@types/js-sha1/-/js-sha1-0.6.0.tgz#4291dfe4318d18d4b30105f6b25dfa5e83601e97"
+  integrity sha512-TBJguE0wDNgtAwL7TpjzPbj5Sz5fsIuTQbgyXDJ7nV1eExhE/kd3YNS/q6JSiPAdElcFoKY3zlSifzjb/vO6xw==
+
 "@types/json-schema@*", "@types/json-schema@^7.0.4", "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.8", "@types/json-schema@^7.0.9":
   version "7.0.12"
   resolved "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.12.tgz"
@@ -2230,6 +2239,11 @@
   version "2.0.3"
   resolved "https://registry.npmjs.org/@types/trusted-types/-/trusted-types-2.0.3.tgz"
   integrity sha512-NfQ4gyz38SL8sDNrSixxU2Os1a5xcdFxipAFxYEuLUlvU2uDwS4NUpsImcf1//SlWItCVMMLiylsxbmNMToV/g==
+
+"@types/uuid@^9.0.2":
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-9.0.2.tgz#ede1d1b1e451548d44919dc226253e32a6952c4b"
+  integrity sha512-kNnC1GFBLuhImSnV7w4njQkUiJi0ZXUycu1rUaouPqiKlXkh77JKgdRnTAp1x5eBwcIwbtI+3otwzuIDEuDoxQ==
 
 "@types/ws@^8.5.5":
   version "8.5.5"
@@ -6047,6 +6061,11 @@ jiti@^1.18.2:
   resolved "https://registry.npmjs.org/jiti/-/jiti-1.19.1.tgz"
   integrity sha512-oVhqoRDaBXf7sjkll95LHVS6Myyyb1zaunVwk4Z0+WPSW4gjS0pl01zYKHScTuyEhQsFxV5L4DR5r+YqSyqyyg==
 
+js-sha1@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/js-sha1/-/js-sha1-0.6.0.tgz#adbee10f0e8e18aa07cdea807cf08e9183dbc7f9"
+  integrity sha512-01gwBFreYydzmU9BmZxpVk6svJJHrVxEN3IOiGl6VO93bVKYETJ0sIth6DASI6mIFdt7NmfX9UiByRzsYHGU9w==
+
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz"
@@ -8988,6 +9007,11 @@ uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+
+uuid@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.0.tgz#592f550650024a38ceb0c562f2f6aa435761efb5"
+  integrity sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==
 
 v8-to-istanbul@^8.1.0:
   version "8.1.1"
