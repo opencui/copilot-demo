@@ -1673,10 +1673,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@opencui/copilot-react@^0.0.26":
-  version "0.0.26"
-  resolved "https://registry.yarnpkg.com/@opencui/copilot-react/-/copilot-react-0.0.26.tgz#57848f949a265bd769a73b549e0b2f88a09c56ab"
-  integrity sha512-/cgBBQWMh7KCLhTK92QZsHFxPrJCantlHmDpAJ6N28DWSRPTOLOVC9NdKc0qVYQFgpSonPlkErk1wJEclDjHkQ==
+"@opencui/copilot-react@^0.0.27":
+  version "0.0.27"
+  resolved "https://registry.yarnpkg.com/@opencui/copilot-react/-/copilot-react-0.0.27.tgz#793a55deb4d00a276fe80210bf0b4857b3b3f95b"
+  integrity sha512-xIwMbo9MboJu5Ap8Ry8dDS2ud4op8TCiux5FSKinXK4JBX+pDqmW+/TY9APRnE79CHbNxomRmVW4XWbO0/WUpg==
   dependencies:
     "@chatui/core" "^2.4.2"
     "@types/js-sha1" "^0.6.0"

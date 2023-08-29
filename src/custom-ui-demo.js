@@ -78,7 +78,7 @@ export default function CustomChatComponent(props) {
 
   }, [appendMsg]);
 
-  function handleSend(type, val) {
+  function handleSend(type, val, extra) {
     if (type === 'text' && val.trim()) {
 
       appendMsg({
@@ -96,7 +96,7 @@ export default function CustomChatComponent(props) {
         messageType: MessageType.text,
         text: val,
         user: me
-      }).then(resps => {
+      }, undefined, undefined, extra).then(resps => {
         for (const msg of resps) {
           appendMsg(converMessage(msg))
         }
@@ -106,8 +106,8 @@ export default function CustomChatComponent(props) {
     }
   }
 
-  function handleQuickReplyClick(text) {
-    handleSend('text', text);
+  function handleQuickReplyClick(text, extra) {
+    handleSend('text', text, extra);
   }
 
   function renderMessageContent(msg) {
@@ -152,7 +152,7 @@ export default function CustomChatComponent(props) {
                     switch (action.actionType) {
 
                       case ActionType.reply:
-                        handleQuickReplyClick(action.text)
+                        handleQuickReplyClick(action.text, action.actionParams)
                         break;
                       case ActionType.click:
                         client.executeAction(action);
